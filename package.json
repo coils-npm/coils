@@ -1,0 +1,18 @@
+{
+  "name": "coils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "coils": "bin/coils.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mars",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.17.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
