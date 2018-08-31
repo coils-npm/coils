@@ -1,24 +1,23 @@
 #!/usr/bin/env node
-const program = require('./private/cmd')
-var packageJson = require('../package.json');
-program.commander.version('0.1.0')
+const commander = require('commander')
+const packageJson = require('../package.json');
+commander.version(packageJson.version)
 
 // Model
 // coils generate model user name:string age:integer
-program.commander.command('generate model <cmd>')
+// Controller
+// coils generate controller api/v1/users index show
+commander.command('generate <cmd>')
 	.arguments('<cmd> [model][arguments]')
 	.action(function (cmd, model) {
 		let arguments = process.argv.slice(process.argv.indexOf(model) + 1, process.argv.length)
-		console.log(cmd, 1, model, 2, arguments)
+		switch (cmd) {
+			case 'model':
+				break;
+			case 'controller':
+				break
+		}
+		console.log(cmd, 1, model, 2, arguments, 3)
 	});
 
-// Controller
-// coils generate controller api/v1/users index show
-program.commander.command('generate controller <cmd>')
-	.arguments('<cmd> [controller][arguments]')
-	.action(function (cmd, controller) {
-		let arguments = process.argv.slice(process.argv.indexOf(controller) + 1, process.argv.length)
-		console.log(cmd, 1, controller, 2, arguments)
-	});
-
-program.commander.parse(process.argv);
+commander.parse(process.argv);
