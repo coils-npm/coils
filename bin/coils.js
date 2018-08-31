@@ -3,6 +3,10 @@ const commander = require('commander')
 const packageJson = require('../package.json');
 commander.version(packageJson.version)
 
+commander.command('new <project>')//.arguments('<project>')
+	.option('-d --db <db>', 'db type', /^(sqlite|mysql)$/i, 'sqlite')
+	.action(require('./coils-new'));
+
 // Model
 // coils generate model user name:string age:integer
 // Controller

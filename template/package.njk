@@ -1,0 +1,23 @@
+{
+  "name": "{{ name }}",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "continuation-local-storage": "^3.2.1",
+    "koa": "^2.5.2",
+    "koa-qs": "^2.0.0",
+    "koa-router": "^7.4.0",
+    "moment": "^2.22.2",
+    {% if db === 'mysql' %}
+    "mysql2": "^1.6.1",
+    {% endif %}
+    "require-directory": "^2.1.1",
+    "sequelize": "^4.38.0"
+  }
+}
