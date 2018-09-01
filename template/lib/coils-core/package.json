@@ -1,0 +1,16 @@
+{
+  "name": "coils-core",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "continuation-local-storage": "^3.2.1",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0"
+  }
+}

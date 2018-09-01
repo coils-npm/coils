@@ -13,10 +13,16 @@ module.exports = function (project, options) {
 	utils.file.readWrite(path.resolve(templatePath, './package.njk'), path.resolve(projectPath, './package.json'), Object.assign({name: project}, options))
 	// copy .sequelize
 	utils.file.copy(path.resolve(templatePath, './.sequelizerc'), path.resolve(projectPath, './.sequelizerc'))
+	// copy start.js
+	utils.file.copy(path.resolve(templatePath, './start.js'), path.resolve(projectPath, './start.js'))
 	// copy app folder
 	utils.folder.copyDir(path.resolve(templatePath, './app'), path.resolve(projectPath, './app'))
 	// copy config folder
 	utils.folder.copyDir(path.resolve(templatePath, './config'), path.resolve(projectPath, './config'))
 	// copy db folder
 	utils.folder.copyDir(path.resolve(templatePath, './db'), path.resolve(projectPath, './db'))
+	// copy lib folder
+	utils.folder.copyDir(path.resolve(templatePath, './lib'), path.resolve(projectPath, './lib'))
+	// copy test folder
+	utils.folder.copyDir(path.resolve(templatePath, './test'), path.resolve(projectPath, './test'))
 }
