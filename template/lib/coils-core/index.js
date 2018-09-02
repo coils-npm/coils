@@ -1,7 +1,8 @@
 const Application = require('./Application')
-const {ActiveModel, Sequelize} = require('./ActiveModel')
+const ActiveModel = require('./ActiveModel')
+const ActionController = require('./ActionController')
 module.exports = {
 	Application,
 	ActiveModel,
-	Sequelize
+	ActionController
 }

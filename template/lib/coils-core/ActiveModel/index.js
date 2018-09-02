@@ -52,4 +52,4 @@ class ActiveModel extends ActiveModelBase {
 	}
 }
 
-module.exports = {ActiveModel, Sequelize}
+module.exports = ActiveModel
