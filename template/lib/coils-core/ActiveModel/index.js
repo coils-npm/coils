@@ -17,8 +17,9 @@ if (config.use_env_variable) {
 } else {
 	sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
-class ActiveRecordBase extends Sequelize.Model {
+// Active Model Base
+let ActiveModelBase = require('./ActiveModelBase')(Sequelize)
+class ActiveModel extends ActiveModelBase {
 	static mounted (application) {
 		let Models = []
 		fs.readdirSync(modelsPath).filter((file) => {
@@ -52,4 +53,4 @@ class ActiveRecordBase extends Sequelize.Model {
 	}
 }
 
-module.exports = {ActiveRecordBase, Sequelize}
+module.exports = {ActiveModel, Sequelize}

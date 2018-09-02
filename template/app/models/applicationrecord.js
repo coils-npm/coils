@@ -1,5 +1,5 @@
-const { ActiveRecordBase } = require('../../lib/coils-core')
-class ApplicationRecord extends ActiveRecordBase {
+const { ActiveModel } = require('../../lib/coils-core')
+class ApplicationRecord extends ActiveModel {
 	constructor () {
 		super (...arguments)
 	}

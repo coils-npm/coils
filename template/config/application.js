@@ -1,9 +1,9 @@
-const { Application, ActiveRecordBase } = require('../lib/coils-core')
+const { Application, ActiveModel } = require('../lib/coils-core')
 class Coils extends Application {
 	constructor ({initializers, SequelizeModelsSequelizeModels}) {
 		super(...arguments)
 		this.use(initializers)
-		this.use(ActiveRecordBase)
+		this.use(ActiveModel)
 		this.setGlobalVars()
 	}
 }

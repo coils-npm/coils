@@ -1,7 +1,7 @@
 const Application = require('./Application')
-const {ActiveRecordBase, Sequelize} = require('./ActiveModel')
+const {ActiveModel, Sequelize} = require('./ActiveModel')
 module.exports = {
 	Application,
-	ActiveRecordBase,
+	ActiveModel,
 	Sequelize
 }
