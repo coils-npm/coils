@@ -18,15 +18,14 @@ if (config.use_env_variable) {
 	sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 // Active Model Base
-let ActiveModelBase = require('./ActiveModelBase')(Sequelize)
+let ActiveModelBase = require('./ActiveModelBase')(Sequelize, sequelize)
 class ActiveModel extends ActiveModelBase {
 	static mounted (application) {
 		let Models = []
 		fs.readdirSync(modelsPath).filter((file) => {
 			return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js') && (!path.basename(file).match(/applicationrecord/))
 		}).forEach((file) => {
-			let sequelizeFilePath = path.resolve(sequelizeModelsPath, file)
-			let {attributes, options} = require(sequelizeFilePath)(sequelize, Sequelize.DataTypes)
+			let {attributes, options} = require(path.resolve(sequelizeModelsPath, file))(sequelize, Sequelize.DataTypes)
 			let Model = require(path.resolve(modelsPath, file))
 			Model.init(attributes, options)
 			Models.push(Model)
