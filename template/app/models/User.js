@@ -1,4 +1,4 @@
-let ApplicationRecord = require('./applicationrecord')
+let ApplicationRecord = require('./ApplicationRecord')
 class User extends ApplicationRecord {
 	constructor () {
 		super(...arguments)

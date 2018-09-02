@@ -23,7 +23,7 @@ class ActiveModel extends ActiveModelBase {
 	static mounted (application) {
 		let Models = []
 		fs.readdirSync(modelsPath).filter((file) => {
-			return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js') && (!path.basename(file).match(/applicationrecord/))
+			return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js') && (!path.basename(file).match(/ApplicationRecord/i))
 		}).forEach((file) => {
 			let {attributes, options} = require(path.resolve(sequelizeModelsPath, file))(sequelize, Sequelize.DataTypes)
 			let Model = require(path.resolve(modelsPath, file))
