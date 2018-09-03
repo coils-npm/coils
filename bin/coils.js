@@ -24,4 +24,7 @@ commander.command('generate <cmd>')
 		console.log(cmd, 1, model, 2, arguments, 3)
 	});
 
+commander.command('console')
+	.action(require('./coils-console'));
+
 commander.parse(process.argv);

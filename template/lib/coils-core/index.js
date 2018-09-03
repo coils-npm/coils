@@ -1,8 +1,8 @@
-const Application = require('./Application')
+const Coils = require('./Coils')
 const ActiveModel = require('./ActiveModel')
 const ActionController = require('./ActionController')
 module.exports = {
-	Application,
+	Coils,
 	ActiveModel,
 	ActionController
 }

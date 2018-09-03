@@ -1,4 +1,4 @@
-class Application {
+class Coils {
 	constructor (options) {
 		for (let key in options) {
 			Object.defineProperties(this, { [key]: { "get": () => { return options[key] } } })
@@ -21,5 +21,12 @@ class Application {
 			})
 		}
 	}
+	
+	startKoa (port) {
+		port = port || this.envConfig.PORT || 3000
+		this.$koa.listen(port, function () {
+			console.log(`app start at: http://localhost:${port}`)
+		})
+	}
 }
-module.exports = Application
+module.exports = Coils
