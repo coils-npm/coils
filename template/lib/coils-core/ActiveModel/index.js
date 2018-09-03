@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('./SequelizeExt');
+const Sequelize = require('sequelize');
 const sequelizeConfig = require(path.resolve(process.cwd(), '.sequelizerc'))
 const cls = require('continuation-local-storage');
 const env = process.env.NODE_ENV || 'development';
@@ -17,6 +17,20 @@ if (config.use_env_variable) {
 } else {
 	sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+Object.assign(sequelize, {
+	define(modelName, attributes, options) {
+		options = options || {};
+		
+		options.modelName = modelName;
+		options.sequelize = this;
+		
+		// override default function
+		return {attributes, options}
+		// const model = class extends Model {};
+		// model.init(attributes, options);
+		// return model;
+	}
+})
 // Active Model Base
 let ActiveModelBase = require('./ActiveModelBase')(Sequelize, sequelize)
 class ActiveModel extends ActiveModelBase {
