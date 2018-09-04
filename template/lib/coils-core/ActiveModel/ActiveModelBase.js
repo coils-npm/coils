@@ -11,9 +11,11 @@ module.exports = function (Sequelize, sequelize) {
 			super(...arguments)
 		}
 		
-		async withLock (asyncCb) {
-			await ActiveModelBase.transaction((t) => this.constructor.findOne({where: {id: this.id}, lock: t.LOCK.UPDATE}))
-			await ActiveModelBase.transaction(asyncCb)
+		withLock (asyncCb) {
+			return ActiveModelBase.transaction(async (t) => {
+				await this.constructor.findOne({where: {id: this.id}, lock: t.LOCK.UPDATE})
+				await asyncCb(t)
+			})
 		}
 	}
 	return ActiveModelBase
