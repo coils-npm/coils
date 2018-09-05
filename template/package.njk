@@ -16,6 +16,8 @@
     "moment": "^2.22.2",
     {% if db === 'mysql' %}
     "mysql2": "^1.6.1",
+    {% else %}
+    "sqlite3": "^4.0.2"
     {% endif %}
     "require-directory": "^2.1.1",
     "sequelize": "^4.38.0"
