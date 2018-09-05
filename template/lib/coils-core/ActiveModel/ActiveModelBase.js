@@ -4,6 +4,10 @@ module.exports = function (Sequelize, sequelize) {
 		// Transaction
 		// https://itbilu.com/nodejs/npm/EJO6CcCM-.html
 		static transaction (tranCb) {
+			let t = Sequelize._cls.get('transaction')
+			if (t) {
+				return Promise.resolve(tranCb(t))
+			}
 			return Promise.resolve(sequelize.transaction(tranCb))
 		}
 
