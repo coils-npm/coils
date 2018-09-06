@@ -1,5 +1,5 @@
-const { ActionController } = require('../../lib/coils-core')
-class ApplicationController extends ActionController {
+const CoilsController = require('coils-controller')
+class ApplicationController extends CoilsController {
 	constructor () {
 		super(...arguments)
 	}
