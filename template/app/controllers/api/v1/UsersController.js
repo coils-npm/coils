@@ -1,4 +1,4 @@
-let BaseController = require('./BaseController)
+let BaseController = require('./BaseController')
 class UsersController extends BaseController {
 	constructor () {
 		super({prefix: '/api/v1/users'})
