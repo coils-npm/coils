@@ -23,6 +23,8 @@ module.exports = function (project, options) {
 	utils.folder.copyDir(path.resolve(templatePath, './db'), path.resolve(projectPath, './db'))
 	// copy lib folder
 	utils.folder.copyDir(path.resolve(templatePath, './lib'), path.resolve(projectPath, './lib'))
+	// copy log folder
+	utils.folder.copyDir(path.resolve(templatePath, './log'), path.resolve(projectPath, './log'))
 	// copy test folder
 	utils.folder.copyDir(path.resolve(templatePath, './test'), path.resolve(projectPath, './test'))
 }
