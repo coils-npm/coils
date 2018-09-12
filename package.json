@@ -1,6 +1,6 @@
 {
   "name": "coils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/index.js",
   "bin": {
     "coils": "bin/coils.js"
