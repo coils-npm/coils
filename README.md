@@ -1,4 +1,11 @@
-Coils is Base Framework like Rails.
+# Coils is Base Framework like Rails.
+
+## Base Components: 
+- [coils-core](https://github.com/coils-npm/coils-core)
+- [coils-env](https://github.com/coils-npm/coils-env)
+- [coils-model](https://github.com/coils-npm/coils-model)
+- [coils-controller](https://github.com/coils-npm/coils-controller)
+- ...
 
 ### Install
 ```
