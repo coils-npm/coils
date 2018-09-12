@@ -1,4 +1,3 @@
-const vm = require('vm')
 const repl = require('repl')
 const path = require('path')
 function initializeContext () {
