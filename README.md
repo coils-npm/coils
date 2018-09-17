@@ -15,6 +15,8 @@ npm i coils -g
 ### init project
 ```
 coils new hello -d mysql
+cd hello && npm i
+node start
 ```
 
 create db
