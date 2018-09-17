@@ -22,9 +22,10 @@ module.exports = {
         type: Sequelize.DATE
       }
     }, {
+			// tableName: 'Users',
+			// timestamps: true,
 	    charset: 'utf8mb4',
-	    collate: 'utf8mb4_general_ci',
-	    timestamps: true
+	    collate: 'utf8mb4_general_ci'
     }).then(() => queryInterface.addIndex('Users', ['username'], {
 		    indicesType: 'UNIQUE'
 		    // indexName: 'composite_index'
