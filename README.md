@@ -1,5 +1,7 @@
 # Coils is Base Framework like Rails.
 
+[![npm](https://img.shields.io/npm/v/coils.svg?style=flat-square)](https://www.npmjs.com/package/coils)
+
 ## Base Components: 
 - [coils-core](https://github.com/coils-npm/coils-core)
 - [coils-env](https://github.com/coils-npm/coils-env)
