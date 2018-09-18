@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "{{ name }}_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
@@ -24,7 +24,7 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "{{ name }}_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
@@ -46,7 +46,7 @@
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "{{ name }}_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
