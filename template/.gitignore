@@ -1,4 +1,13 @@
+.DS_STORE
 .idea
+.node_history
 node_modules
+package-lock.json
+dump.rdb
 *.sqlite
 log/*
+*.log
+
+# for secret
+config/env.json
+config/database.json
