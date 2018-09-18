@@ -10,7 +10,7 @@ module.exports = function (ctrlPath, args) {
 	let filenameSimple = filename.replace('Controller', '')
 	let prefix = ctrlPath.replace('Controller', '').split('/').map(item => Inflector.underscore(item)).join('/')
 	console.log(filename, prefix, args)
-	let filePath = path.resolve(process.cwd(), ctrlPath, '../')
+	let filePath = path.resolve(process.cwd(), 'app', ctrlPath, '../')
 	exec(`mkdir -p ${filePath}`, function (err) {
 		let options = {}
 		args.forEach(key => {
