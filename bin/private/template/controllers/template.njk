@@ -2,6 +2,7 @@ let BaseController = require('./BaseController')
 class {{ filename }} extends BaseController {
     constructor () {
         super({prefix: '{{ prefix }}'})
+
         {% if index %}// index
         this.get('/', async (ctx, next) => {
           ctx.body = []
