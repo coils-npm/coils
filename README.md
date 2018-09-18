@@ -21,10 +21,16 @@ cd hello && npm i
 node start
 ```
 
-create db
+create db (sqlite skip it)
 ```
 $ coils db:create [--env production]
 ```
+
+migrate (create table)
+```
+coils db:migrate
+```
+
 drop db
 ```
 $ coils db:drop [--env production]
@@ -40,11 +46,6 @@ coils generate seed User
 ### destroy
 ```
 coils destroy controller api/v1/Users
-```
-
-### migrate
-```
-coils db:migrate
 ```
 
 ### rollback
