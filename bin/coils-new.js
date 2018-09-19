@@ -29,5 +29,5 @@ module.exports = function (project, options) {
 	// copy test folder
 	utils.folder.copyDir(path.resolve(templatePath, './test'), path.resolve(projectPath, './test'))
 	// copy db:config
-	utils.file.readWrite(path.resolve(__dirname, `./private/template/dbs/${options.db}.njk`), path.resolve(projectPath, './config/database.json'), Object.assign({name: project}, options))
+	utils.file.readWrite(path.resolve(__dirname, `./private/template/dbs/${options.db}.njk`), path.resolve(projectPath, './config/database.json'), Object.assign({name: project.replace(/-/g, '_')}, options))
 }
