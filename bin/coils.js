@@ -50,22 +50,22 @@ commander.command('destroy <cmd>')
 commander.option('-e, --env [v]', 'environment')
 	.command('db:create').action(function () {
 		let env = commander.env || 'development'
-		exec(`sequelize db:create --env ${env}`, function (err) {if (err) {console.error(err)}})
+		exec(`sequelize db:create --env ${env}`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})
 	});
 
 commander.option('-e, --env [v]', 'environment')
 	.command('db:drop').action(function () {
 	let env = commander.env || 'development'
-	exec(`sequelize db:drop --env ${env}`, function (err) {if (err) {console.error(err)}})
+	exec(`sequelize db:drop --env ${env}`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})
 });
 
-commander.command('db:migrate').action(function () {exec(`sequelize db:migrate`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:rollback').action(function () {exec(`sequelize db:migrate:undo`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:rollback:all').action(function () {exec(`sequelize db:migrate:undo:all`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:seed').action(function () {exec(`sequelize db:seed:all`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:seed:all').action(function () {exec(`sequelize db:seed:all`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:seed:undo').action(function () {exec(`sequelize db:seed:undo`, function (err) {if (err) {console.error(err)}})});
-commander.command('db:seed:undo:all').action(function () {exec(`sequelize db:seed:undo:all`, function (err) {if (err) {console.error(err)}})});
+commander.command('db:migrate').action(function () {exec(`sequelize db:migrate`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:rollback').action(function () {exec(`sequelize db:migrate:undo`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:rollback:all').action(function () {exec(`sequelize db:migrate:undo:all`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:seed').action(function () {exec(`sequelize db:seed:all`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:seed:all').action(function () {exec(`sequelize db:seed:all`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:seed:undo').action(function () {exec(`sequelize db:seed:undo`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
+commander.command('db:seed:undo:all').action(function () {exec(`sequelize db:seed:undo:all`, function (err) {if (err) {console.error(err)} else {console.log('finished')}})});
 
 commander.command('console')
 	.action(require('./coils-console'));
