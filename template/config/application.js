@@ -7,8 +7,8 @@ class Application extends Coils {
 	// PORT
 	constructor (initOptions = {}) {
 		super(initOptions)
-		this.use(initializers)
 		this.use(CoilsEnv)
+		this.use(initializers)
 		this.use(CoilsModel)
 		// mount Koa about
 		this.use(CoilsController)
