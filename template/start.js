@@ -1,3 +1,3 @@
-const Application = require('./config/application')
+const Application = require('./config/Application')
 let application = new Application()
 application.startKoa()
